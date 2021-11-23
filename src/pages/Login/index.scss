@@ -1,0 +1,25 @@
+.bgBody{
+  background-color:#408080;
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container{
+    width: 25vw;
+    height:15vw;
+    background-color:#FFFFFF;
+    border-radius: 3%;
+    h1{
+      text-align: center;
+      margin:20px 0;
+    }
+    .register-btn{
+      margin-left: 20px;
+    }
+    .login-forget{
+      float: right;
+      cursor: pointer;
+    }
+  }
+}
