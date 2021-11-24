@@ -1,11 +1,11 @@
 import React, {Component } from 'react';
 import { Button,Form,Input,Checkbox } from 'antd';
 import { FormInstance } from 'antd/es/form';
+import { Link } from "react-router-dom";
 
 import './index.scss'
 
 export interface LoginProp {
-  title?: string;
   userName?: string;
   password?: string;
 }
@@ -14,7 +14,6 @@ class Login extends Component<LoginProp,{}>{
     console.log("点击转跳到:",event)
   }
   render() {
-    let title = this.props.title
     const formRef = React.createRef<FormInstance>();
     const onFinish = (values: any) => {
       console.log('Success:', values);
@@ -30,7 +29,7 @@ class Login extends Component<LoginProp,{}>{
     const bgBody = (
       <div className="bgBody">
         <div className="container">
-          <h1>{title}</h1>
+          <h1>系统管理后台</h1>
           <div className="content">
             <Form 
             ref={formRef}
@@ -80,7 +79,7 @@ class Login extends Component<LoginProp,{}>{
                   登录
                 </Button>
                 <Button type="primary" className="register-btn" htmlType="button" onClick={toRegister}>
-                  注册
+                  <Link to="/register">注册</Link>
                 </Button>
               </Form.Item>
             </Form>

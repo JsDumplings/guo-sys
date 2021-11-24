@@ -6,14 +6,14 @@ export type RouterType = {
   notExect?: boolean,
 }
 
-const HomeRouter: RouterType = {
+const LoginRouter: RouterType = {
   path: '/',
   component: Login,
   root: [],
 }
 // 总路由
 const Routers: RouterType[] = ([
-  HomeRouter,
+  LoginRouter,
 ])
 
 export {
