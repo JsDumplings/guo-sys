@@ -20,7 +20,8 @@
     "web-vitals": "^1.1.2"
   },
   "devDependencies": {
-    "node-sass": "^6.0.1"
+    "sass-loader": "^10.1.1",
+    "node-sass": "^4.14.1"
   },
   "scripts": {
     "start": "react-scripts start",

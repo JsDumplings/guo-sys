@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2967454 */
+  src: url('iconfont.woff2?t=1637908785416') format('woff2'),
+       url('iconfont.woff?t=1637908785416') format('woff'),
+       url('iconfont.ttf?t=1637908785416') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xiangji:before {
+  content: "\e674";
+}
+

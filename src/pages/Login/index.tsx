@@ -34,7 +34,7 @@ class Login extends Component<LoginProp,{}>{
             <Form 
             ref={formRef}
             name="loginForm"
-            labelCol={{ span: 6 }}
+            labelCol={{ span: 7 }}
             wrapperCol={{ span: 12 }}
             initialValues={{ remember: true }}
             onFinish={onFinish}
@@ -65,7 +65,7 @@ class Login extends Component<LoginProp,{}>{
               >
                 <Input.Password placeholder="请输入密码" />
               </Form.Item>
-              <Form.Item wrapperCol={{ offset: 6, span: 12 }}>
+              <Form.Item className="remember-container" wrapperCol={{ offset: 7, span: 12 }}>
                 <Form.Item name="remember" valuePropName="checked" noStyle>
                   <Checkbox>记住密码</Checkbox>
                 </Form.Item>
