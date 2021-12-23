@@ -10,18 +10,31 @@ export interface LoginProp {
   password?: string;
 }
 class Login extends Component<LoginProp,{}>{
-  toRegister(event: any): void{
-    console.log("点击转跳到:",event)
-  }
   render() {
     const formRef = React.createRef<FormInstance>();
     const onFinish = (values: any) => {
       console.log('Success:', values);
+      let params = {
+        username:values.username,
+        password:values.password,
+      }
+      fetch('http://127.0.0.1:9000',
+        {
+          method:'post',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(params)
+        }
+      )
+        .then(res=>res.json())
+        .then(
+          (result)=>{
+            console.log('result',result)
+          }
+        )
       formRef.current!.resetFields(); // 清空表单
     };
-    const toRegister = (event: any) => {
-      this.toRegister(event);
-    }
   
     const onFinishFailed = (errorInfo: any) => {
       console.log('Failed:', errorInfo);
@@ -78,7 +91,7 @@ class Login extends Component<LoginProp,{}>{
                 <Button type="primary" htmlType="submit">
                   登录
                 </Button>
-                <Button type="primary" className="register-btn" htmlType="button" onClick={toRegister}>
+                <Button type="primary" className="register-btn" htmlType="button">
                   <Link to="/register">注册</Link>
                 </Button>
               </Form.Item>
