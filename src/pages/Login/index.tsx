@@ -9,10 +9,9 @@ export interface LoginProp {
   userName?: string;
   password?: string;
 }
-class Login extends Component<LoginProp,{}>{
-  render() {
-    const formRef = React.createRef<FormInstance>();
-    const onFinish = (values: any) => {
+const Login:React.FC<LoginProp> = () =>{
+  const formRef = React.createRef<FormInstance>();
+  const onFinish = (values: any) => {
       console.log('Success:', values);
       let params = {
         username:values.username,
@@ -34,13 +33,13 @@ class Login extends Component<LoginProp,{}>{
           }
         )
       formRef.current!.resetFields(); // 清空表单
-    };
-  
-    const onFinishFailed = (errorInfo: any) => {
-      console.log('Failed:', errorInfo);
-    };
-    const bgBody = (
-      <div className="bgBody">
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
+  return (
+    <div className="bgBody">
         <div className="container">
           <h1>系统管理后台</h1>
           <div className="content">
@@ -99,8 +98,6 @@ class Login extends Component<LoginProp,{}>{
           </div>
         </div>
       </div>
-    );
-    return (bgBody)
-  }
+  )
 }
 export default Login;
